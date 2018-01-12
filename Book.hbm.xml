@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 10 Jan, 2018 10:48:01 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="Book" table="BOOK">
+        <id name="bookId" type="int">
+            <column name="BOOKID" />
+            <generator class="assigned" />
+        </id>
+        <property name="noOfCopies" type="int">
+            <column name="NOOFCOPIES" />
+        </property>
+        <property name="bookName" type="java.lang.String" access="field">
+            <column name="BOOKNAME" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table-filter match-schema="public" match-name=".*" />
+	<table-filter match-name="Book" match-schema="public"></table-filter>
+	<table-filter match-name="Book_issue" match-schema="public"></table-filter>
+	<table-filter match-name="Customer" match-schema="public"></table-filter>
+	<table schema="public" name="Book" catalog="" class="Book">
+		<primary-key></primary-key>
+	</table>
+	<table schema="public" name="Book_issue" class="Book_issue">
+		<primary-key></primary-key>
+	</table>
+	<table schema="public" name="Customer" class="Customer">
+		<primary-key></primary-key>
+	</table>
+</hibernate-reverse-engineering>
