@@ -18,6 +18,17 @@ public class Book {
 
 	@Column(name = "book_name")
 	private String bookName;
+	
+	@Column(name= "book_type")
+	private String bookType;
+
+	public String getBookType() {
+		return bookType;
+	}
+
+	public void setBookType(String bookType) {
+		this.bookType = bookType;
+	}
 
 	public int getBookId() {
 		return bookId;

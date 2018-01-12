@@ -23,7 +23,7 @@ public class Customer {
 	private String customerName;
 	
 	@Column(name = "customer_age")
-	private byte customerAge;
+	private short customerAge;
 	
 	@Column(name = "customer_username")
 	private String userName;
@@ -31,6 +31,15 @@ public class Customer {
 	@Column(name = "customer_password")
 	private String password;
 	
+	@Column(name="customer_type")
+	private int customerType;
+	
+	public int getCustomerType() {
+		return customerType;
+	}
+	public void setCustomerType(int customerType) {
+		this.customerType = customerType;
+	}
 	public int getCustomerId() {
 		return customerId;
 	}
@@ -43,11 +52,11 @@ public class Customer {
 	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
-	public byte getCustomerAge() {
+	public short getCustomerAge() {
 		return customerAge;
 	}
-	public void setCustomerAge(byte customerAge) {
-		this.customerAge = customerAge;
+	public void setCustomerAge(short o) {
+		this.customerAge = o;
 	}
 	
 	public String getUserName() {
