@@ -10,6 +10,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.AnnotationConfiguration;
+import org.hibernate.cfg.Configuration;
 
 public class LibraryMain {
 
@@ -44,6 +45,7 @@ public class LibraryMain {
 
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		try {
+		
 			SessionFactory factory = new AnnotationConfiguration().addAnnotatedClass(Book.class)
 					.addAnnotatedClass(Customer.class).addAnnotatedClass(BookIssue.class)
 					.addAnnotatedClass(Employee.class).configure()
@@ -79,12 +81,29 @@ public class LibraryMain {
 						if (display(session, "*", "customer where customer_username = '" + username
 								+ "' and customer_password = '" + password + "'") == 1) {
 							System.out.println("Successfully Logged In");
+							System.out.println("Search Books (y/n");
+							if (br.readLine().charAt(0) == 'y')
+							{
+								System.out.println("1. Search By Name");
+								System.out.println("2. Search By Genre");
+								if (br.readLine().charAt(0) == '1')
+								{
+									String bookName=br.readLine();
+									//Searchbyname
+									//searchByName(bookName);	
+								}
+							}
+							
+									
+							
 							break;
 						} else
 							System.out.println("Invalid User Login");
-						// select * from customer where customer_username = 'C_Utkarsh ' and
-						// customer_password = 'qwer'
-					} else if (username.startsWith("EMP_")) {
+					}
+					
+					
+					//
+					else if (username.startsWith("EMP_")) {
 						System.out.println("Employee Login");
 						System.out.println("Enter your Password");
 						String password = br.readLine();
@@ -101,7 +120,7 @@ public class LibraryMain {
 							}//session.flush(); trans.commit();
 							break;
 						} else
-							System.out.println("Invalid User Login");
+							System.out.println("Invalid Employee Login");
 					}
 
 				}
