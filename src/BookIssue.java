@@ -25,7 +25,7 @@ public class BookIssue {
 	private short noOfDays;
 
 	@OneToOne
-    @Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE,org.hibernate.annotations.CascadeType.DELETE})
+	@Cascade({ org.hibernate.annotations.CascadeType.SAVE_UPDATE, org.hibernate.annotations.CascadeType.DELETE })
 	private Customer cust;
 
 	@OneToOne
