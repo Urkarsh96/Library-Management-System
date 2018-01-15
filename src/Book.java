@@ -18,8 +18,8 @@ public class Book {
 
 	@Column(name = "book_name")
 	private String bookName;
-	
-	@Column(name= "book_type")
+
+	@Column(name = "book_type")
 	private String bookType;
 
 	public String getBookType() {

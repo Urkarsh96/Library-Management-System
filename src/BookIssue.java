@@ -1,4 +1,5 @@
 import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.Cascade;
+
 @Entity
 @Table(name = "book_issue")
 public class BookIssue {
@@ -14,19 +17,20 @@ public class BookIssue {
 	@Column(name = "issue_id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long IssueID;
-	
+
 	@Column(name = "start_date")
 	private Date startDate;
-	
+
 	@Column(name = "no_of_days")
 	private short noOfDays;
-	
+
 	@OneToOne
+    @Cascade({org.hibernate.annotations.CascadeType.SAVE_UPDATE,org.hibernate.annotations.CascadeType.DELETE})
 	private Customer cust;
-	
+
 	@OneToOne
 	private Book book;
-	
+
 	public Customer getCust() {
 		return cust;
 	}
@@ -42,7 +46,6 @@ public class BookIssue {
 	public void setBook(Book book) {
 		this.book = book;
 	}
-
 
 	public Date getStartDate() {
 		return startDate;
