@@ -65,6 +65,11 @@ public class LibraryMain {
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		try {
 
+			System.out.println("WELCOME TO LIBRARY MANAGEMENT SYSTEM");
+			
+			System.out.println("");
+			System.out.println("--------------------------------------------------------");
+			System.out.println("");
 			SessionFactory factory = new AnnotationConfiguration().addAnnotatedClass(Book.class)
 					.addAnnotatedClass(Customer.class).addAnnotatedClass(BookIssue.class)
 					.addAnnotatedClass(Employee.class).configure()
